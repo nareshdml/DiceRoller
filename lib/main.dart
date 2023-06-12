@@ -24,6 +24,12 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  resetNumber() {
+    setState(() {
+      diceNumber = 6;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +37,11 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: const Color.fromARGB(255, 1, 30, 53),
         centerTitle: true,
         title: Text('Dice Roller'),
+      ),
+      floatingActionButton: FloatingActionButton.small(
+        backgroundColor: const Color.fromARGB(255, 1, 30, 53),
+        onPressed: resetNumber,
+        child: Icon(Icons.restore_outlined),
       ),
       body: Column(
         children: [
